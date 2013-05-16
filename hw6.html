@@ -1,0 +1,44 @@
+<html>
+<style>
+	body {
+	font-family: verdana
+}
+
+#searchBox {
+	width: 400px;
+	height: 70px;
+	border: 1px solid;
+	padding: 5px;
+}
+
+</style>
+
+<script type="text/javascript">
+function doFormValidate(){
+
+	if(document.getElementById('form_in').value == "")
+	{
+		alert("Please enter something in the search box");
+		return false;
+	}
+	return true;
+}
+</script>
+
+<body>
+	<h1> Discography Search </h1>
+	<div id="searchBox">
+		<form id="discoSearch" method="GET" action="discograph.php" accept-charset="utf-8">
+		Search: <input type="text" name="sQuery" id="form_in">
+		<br/>
+		Type: <select name="qT">
+				<option selected value="artists">Artists</option>
+				<option value="albums">Albums</option>
+				<option value="songs">Songs</option>
+			  </select>
+			  <br/>
+		<input type="submit" value="Search" onClick="return doFormValidate()">
+	</form>
+	</div>
+</body>
+</html>
